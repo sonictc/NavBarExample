@@ -1,0 +1,25 @@
+Name: Converters
+Type: ConvertersCategoryFolder
+Children:
+- Name: ScreenSelect
+  Id: g=ac51506cd69d78ffeff300e727e09d71
+  Supertype: ConditionalConverter
+  ReferenceType: HasComponent
+  Children:
+  - Name: Condition
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ReferenceType: HasSource
+    Value: false
+  - Name: TrueValue
+    Type: BaseDataVariableType
+    DataType: Color
+    ReferenceType: HasParameter
+    ModellingRule: Optional
+    Value: "#c0d7bc"
+  - Name: FalseValue
+    Type: BaseDataVariableType
+    DataType: Color
+    ReferenceType: HasParameter
+    ModellingRule: Optional
+    Value: "#cccccc"
