@@ -1,2 +1,43 @@
 Name: Model
 Type: ModelCategoryFolder
+Children:
+- Name: Meter1
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter2
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter3
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter4
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter5
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter6
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter7
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter8
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter9
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0
+- Name: Meter10
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 0

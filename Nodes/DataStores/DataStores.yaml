@@ -1,2 +1,121 @@
 Name: DataStores
 Type: DataStoresCategoryFolder
+Children:
+- Name: EmbeddedDatabase
+  Id: g=22734c99cd26a5fb694c5c0ff19d9e72
+  Type: SQLiteStore
+  Children:
+  - Name: Tables
+    Type: BaseObjectType
+    Children:
+    - Name: MDB1
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=9;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=9;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=9;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=9;i=20
+        Direction: Forward
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Timestamp
+          Type: StoreColumn
+          DataType: UtcTime
+          Value: "1601-01-01T00:00:00.0000000"
+        - Name: LocalTimestamp
+          Type: StoreColumn
+          DataType: DateTime
+          Value: "1601-01-01T00:00:00.0000000"
+        - Name: Meter1
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: Meter2
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: Meter3
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: Meter4
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: Meter5
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+        - Name: Meter6
+          Type: StoreColumn
+          DataType: Int32
+          Value: 0
+  - Class: Reference
+    Target: ns=10;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=10;i=33
+    Direction: Forward
+  - Name: MaxColumnNameLength
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+    Value: 0
+  - Name: MaxColumnCount
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+    Value: 0
+  - Name: DataTypeCompatibilityMap
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+    Value: {"Type":17,"Dimensions":[0,0],"Body":[]}
+  - Name: Status
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=9;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=9;i=59
+    Direction: Forward
