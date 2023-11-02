@@ -41,3 +41,8 @@ Children:
   Type: BaseDataVariableType
   DataType: Int32
   Value: 0
+- Name: Voltage
+  Id: g=c35022c47ed7b56b8a2f7e5dd4aea407
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 220

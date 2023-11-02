@@ -1,3 +1,128 @@
 Name: Alarms
 Id: g=3293e7cd8de0bb06cc725e017a984470
 Type: AlarmsCategoryFolder
+Children:
+- Name: VoltageAlarm_Digital
+  Id: g=ee567db2679e825273474f0766379ba3
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=af0cb83a2835833bde9c49b00c12bbe2
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: InputValue
+    Id: g=4bcfbe236eef4568cf53761329a80c01
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=723866d8ce835fa09ba972bb2fc69fe6
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=fe2a54b896741512f819894bec71e6c0
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        Value: "{0}>220"
+      - Name: ns=2;Source0
+        Id: g=239799e697eb329a1488a733ef2ea8b4
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=eb355d3cb7317404336b67762c9a84fa
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../../../Model/Voltage"
+          Children:
+          - Name: Mode
+            Id: g=98460c16dafcabf019c39e53582b116f
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            Value: 2
+      - Name: Mode
+        Id: g=e81a9f4b2b97762133661c4c7b93d793
+        Type: PropertyType
+        DataType: DynamicLinkMode
+        ReferenceType: HasComponent
+        Value: 2
+  - Name: LastEvent
+    Id: g=b89c283bb6e3b1187ef890c4178ceedd
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=20;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=20;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=20;i=83
+    Direction: Forward
+  - Name: AutoConfirm
+    Id: g=e5bf85b37000cec68aef0b36784c842a
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Message
+    Id: g=2cbb71311f63d9060bd06e1d1d2004b3
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Voltage Digital Alarm"}
+- Name: VoltageAlarm_Level
+  Id: g=b1f13446fb6de0b735d34ea9d914e333
+  Type: ExclusiveLevelAlarmController
+  Children:
+  - Name: InputValue
+    Id: g=30a9c57d0e7f8e151e127ed148fea6ca
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+    Children:
+    - Name: DynamicLink
+      Id: g=74fe5ac5fe3ee899488ee71b47bed627
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../Model/Voltage"
+      Children:
+      - Name: Mode
+        Id: g=bf82f677dc174803d84c4dd1230ec63a
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: LastEvent
+    Id: g=9746845cd9034bb0ea9ec057cdfef800
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=20;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=20;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=20;i=83
+    Direction: Forward
+  - Name: HighLimit
+    Id: g=47b3212cded826f071a51b24e7f39632
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 220.0
+  - Name: AutoConfirm
+    Id: g=e76953f2b965051594f4e78584d77ae8
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Message
+    Id: g=a596c8814a46cedcab3e8e79c4aea5dc
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Voltage Level Alarm"}

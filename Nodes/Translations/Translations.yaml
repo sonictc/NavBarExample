@@ -9,8 +9,23 @@ Children:
   Value: 
    {
     "Type": 12,
-    "Dimensions": [1,2],
+    "Dimensions": [16,2],
     "Body": [
-     "","en-US"
+     "","en-US",
+     "Acknowledge","Acknowledge",
+     "Timestamp","Timestamp",
+     "Acknowledge All","Acknowledge All",
+     "Name","Name",
+     "SourceName","Source Variable",
+     "Confirm All","Confirm All",
+     "Active","Active",
+     "Confirm","Confirm",
+     "Acked","Acked",
+     "Confirmed","Confirmed",
+     "Message","Message",
+     "Severity","Severity",
+     "From","From",
+     "Refresh","Refresh",
+     "To","To"
     ]
    }

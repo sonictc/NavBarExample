@@ -184,7 +184,7 @@ Children:
               Type: BaseDataVariableType
               DataType: LocalizedText
               ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Screen1"}
+              Value: {"LocaleId":"en-US","Text":"Alarm Status"}
             - Name: Width
               Type: BaseVariableType
               DataType: Size
@@ -356,7 +356,7 @@ Children:
               Type: BaseDataVariableType
               DataType: LocalizedText
               ModellingRule: Optional
-              Value: {"LocaleId":"en-US","Text":"Screen2"}
+              Value: {"LocaleId":"en-US","Text":"Alarm History"}
             - Name: Width
               Type: BaseVariableType
               DataType: Size
@@ -1935,6 +1935,369 @@ Children:
               DataType: Size
               ModellingRule: Optional
               Value: 170.0
+        - Name: Panel1
+          Type: Panel
+          Children:
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 120.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 300.0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 3
+          - Name: AlarmIcon1
+            Type: Panel
+            WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 108.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 97.0
+            - Name: DropDownButton
+              Type: DropDownButton
+              Children:
+              - Name: Panel
+                Type: NodePointer
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: {"Id":71,"Namespace":3}
+                - Name: NodeClass
+                  Type: PropertyType
+                  DataType: NodePointerNodeClass
+                  ModellingRule: Optional
+                  Value: 1
+                - Name: DynamicLink
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{AlarmPanelDropDown}@NodeId"
+              - Name: Appearance
+                Type: BaseVariableType
+                DataType: String
+                ModellingRule: Optional
+                Value: "transparent"
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 35.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 35.0
+              - Name: AnimationType
+                Type: BaseDataVariableType
+                DataType: DropDownButtonAnimationTypeEnum
+                ModellingRule: Optional
+                Value: 1
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 3
+            - Name: BellImage
+              Type: Image
+              Children:
+              - Name: Path
+                Type: BaseDataVariableType
+                DataType: ResourceUri
+                Value: "ns=7;%PROJECTDIR%/Notification-black@3x.png"
+                Children:
+                - Name: ValueMapConverter1
+                  Type: ValueMapConverter
+                  Children:
+                  - Name: Source
+                    Type: BaseDataVariableType
+                    DataType: BaseDataType
+                    ReferenceType: HasSource
+                    Children:
+                    - Name: ExpressionEvaluator1
+                      Type: ExpressionEvaluator
+                      Children:
+                      - Name: Expression
+                        Type: BaseDataVariableType
+                        DataType: String
+                        ReferenceType: HasParameter
+                        ModellingRule: Optional
+                        Value: "{0} > 0"
+                      - Name: Source0
+                        Type: BaseDataVariableType
+                        DataType: BaseDataType
+                        ReferenceType: HasSource
+                        Children:
+                        - Name: DynamicLink
+                          Type: DynamicLink
+                          DataType: NodePath
+                          Value: "../../../../../../AlarmIconNotificationLogic/AlarmCount"
+                  - Name: Pairs
+                    Type: BaseObjectType
+                    Children:
+                    - Name: Pair
+                      Type: ValueMapPair
+                      Children:
+                      - Name: Key
+                        Type: BaseDataVariableType
+                        DataType: Boolean
+                        Value: false
+                      - Name: Value
+                        Type: BaseDataVariableType
+                        DataType: ResourceUri
+                        Value: "ns=7;%PROJECTDIR%/Notification-black@3x.png"
+                    - Name: Pair1
+                      Type: ValueMapPair
+                      Children:
+                      - Name: Key
+                        Type: BaseDataVariableType
+                        DataType: Boolean
+                        Value: true
+                      - Name: Value
+                        Type: BaseDataVariableType
+                        DataType: ResourceUri
+                        Value: "ns=7;%PROJECTDIR%/Notification-red@3x.png"
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 35.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 35.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: SequentialAnimation1
+                Type: SequentialAnimation
+                Children:
+                - Name: Running
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                  Children:
+                  - Name: ExpressionEvaluator1
+                    Type: ExpressionEvaluator
+                    Children:
+                    - Name: Expression
+                      Type: BaseDataVariableType
+                      DataType: String
+                      ReferenceType: HasParameter
+                      ModellingRule: Optional
+                      Value: "{0} > 0"
+                    - Name: Source0
+                      Type: BaseDataVariableType
+                      DataType: BaseDataType
+                      ReferenceType: HasSource
+                      Children:
+                      - Name: DynamicLink
+                        Type: DynamicLink
+                        DataType: NodePath
+                        Value: "../../../../../AlarmIconNotificationLogic/AlarmCount"
+                - Name: Animation1
+                  Type: NumberAnimation
+                  Children:
+                  - Name: To
+                    Type: BaseDataVariableType
+                    DataType: Float
+                    Value: 60.0
+                  - Name: Target
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: {"IdType":0,"Id":0,"Namespace":-1}
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: {"Id":62}
+                    - Name: NodeClass
+                      Type: PropertyType
+                      DataType: NodePointerNodeClass
+                      ModellingRule: Optional
+                      Value: 0
+                    - Name: DynamicLink
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../Rotation@NodeId"
+                  - Name: Running
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                    Value: true
+                  - Name: Duration
+                    Type: BaseDataVariableType
+                    DataType: Int32
+                    ModellingRule: Optional
+                    Value: 500
+                  - Name: EasingCurve
+                    Type: BaseDataVariableType
+                    DataType: EasingCurveEnum
+                    ModellingRule: Optional
+                    Value: 3
+                - Name: Animation2
+                  Type: NumberAnimation
+                  Children:
+                  - Name: To
+                    Type: BaseDataVariableType
+                    DataType: Float
+                    Value: -60.0
+                  - Name: Target
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: {"IdType":0,"Id":0,"Namespace":-1}
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: {"Id":62}
+                    - Name: NodeClass
+                      Type: PropertyType
+                      DataType: NodePointerNodeClass
+                      ModellingRule: Optional
+                      Value: 0
+                    - Name: DynamicLink
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../Rotation@NodeId"
+                  - Name: Running
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                    Value: true
+                  - Name: From
+                    Type: BaseDataVariableType
+                    DataType: Float
+                    ModellingRule: Optional
+                    Value: 60.0
+                  - Name: Duration
+                    Type: BaseDataVariableType
+                    DataType: Int32
+                    ModellingRule: Optional
+                    Value: 500
+                  - Name: EasingCurve
+                    Type: BaseDataVariableType
+                    DataType: EasingCurveEnum
+                    ModellingRule: Optional
+                    Value: 3
+                - Name: Loops
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  ModellingRule: Optional
+                  Value: -1
+              - Name: Rotation
+                Type: BaseVariableType
+                DataType: Size
+                Value: 0.0
+              - Name: Animation1
+                Type: NumberAnimation
+                Children:
+                - Name: To
+                  Type: BaseDataVariableType
+                  DataType: Float
+                  Value: 0.0
+                - Name: Target
+                  Type: NodePointer
+                  DataType: NodeId
+                  Value: {"IdType":0,"Id":0,"Namespace":-1}
+                  Children:
+                  - Name: Kind
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: {"Id":62}
+                  - Name: NodeClass
+                    Type: PropertyType
+                    DataType: NodePointerNodeClass
+                    ModellingRule: Optional
+                    Value: 0
+                  - Name: DynamicLink
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../Rotation@NodeId"
+                - Name: Running
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                  Children:
+                  - Name: ExpressionEvaluator1
+                    Type: ExpressionEvaluator
+                    Children:
+                    - Name: Expression
+                      Type: BaseDataVariableType
+                      DataType: String
+                      ReferenceType: HasParameter
+                      ModellingRule: Optional
+                      Value: "{0} == 0"
+                    - Name: Source0
+                      Type: BaseDataVariableType
+                      DataType: BaseDataType
+                      ReferenceType: HasSource
+                      Children:
+                      - Name: DynamicLink
+                        Type: DynamicLink
+                        DataType: NodePath
+                        Value: "../../../../../AlarmIconNotificationLogic/AlarmCount"
+                - Name: Duration
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  ModellingRule: Optional
+                  Value: 500
+              - Name: FillMode
+                Type: BaseDataVariableType
+                DataType: FillModeEnum
+                ModellingRule: Optional
+                Value: 1
+            - Name: AlarmIconNotificationLogic
+              Type: NetLogic
+              Children:
+              - Name: AlarmCount
+                Type: BaseDataVariableType
+                DataType: Int32
+                Value: 0
+              - Name: LastAlarm
+                Type: NodePointer
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: Kind
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: {"Id":2915}
+            - Name: AlarmPanelDropDown
+              Type: Alias
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
     - Name: Body
       Type: Panel
       Children:
